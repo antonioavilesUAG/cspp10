@@ -1,4 +1,4 @@
-secs = input("What number do you want to convert to minutes: ") 
+secs = input("What number do you want to convert: ") 
 hrs= int(float(secs))/3600
 mins = (int(float(secs))/60)%60
 secs2 = int(float(secs))%60 
