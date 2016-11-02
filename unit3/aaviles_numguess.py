@@ -1,13 +1,13 @@
-import random  
-num = (random.randint(100)) 
-guess = int(input("number of guess"))
-for x in range(100):
-    while x != num:
-        print ("x")
-    if x < num:
-        print("too low try again")
-    elif x > 50:
-        print ("too high try again")
-    elif x == num:
-        print("you got it") 
-print("you tried {}")
+import random 
+num = (random.randint(1,100)) 
+guess = int(input("number of guess: "))
+while num != guess:
+    if guess < num:
+        print (int(input("too low try again: ")))
+        guess = guess + 1
+    elif guess > num:
+        print (int(input("too high try again: ")))
+        guess = guess + 1 
+    elif num == guess:
+        break
+print("you tried {}, number is {}".format(guess,num))
