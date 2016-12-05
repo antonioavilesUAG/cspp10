@@ -7,7 +7,7 @@ def get_p1_move():
     if p1move == "rock":
         return ("r")
     elif p1move == "scissor":
-        return ("s")
+        return ("s")   
     elif p1move == "paper":
         return ("p")
 # print(get_p1_move())
@@ -15,11 +15,11 @@ def get_p1_move():
 def get_comp_move():
     cmove = random.randint(1,3)
     if cmove == 1:
-        return ("computer move is r")
+        return ("r")
     elif cmove == 2:
-        return ("computer move is s")
+        return ("s")
     elif cmove == 3:
-        return ("computer move is p")
+        return ("p")
 # print(get_comp_move())
 
 def get_rounds():
@@ -29,11 +29,11 @@ def get_rounds():
 
 def get_round_winner(p1move, cmove):
     if cmove == "p" and p1move == "r":
-        return("Computer wins")
+        return("computer")
     elif cmove == "s" and p1move == "p":
-        return ("Computer wins")
+        return ("computer")
     elif cmove =="r" and p1move == "s":
-        return ("Computer wins")
+        return ("computer")
     elif cmove == "p" and p1move == "s":
         return ("player")
     elif cmove == "s" and p1move == "r":
@@ -57,18 +57,28 @@ def print_score(pscore, cscore, ties):
     print("ties is {}".format(ties))
 
 def rps():
+    player = 0 
+    computer = 0
+    ties = 0
     round = get_rounds()
-    p1move = get_p1_move()
-    cmove = get_comp_move()
+    for x in range(1, round):
+        p1move = get_p1_move()
+        cmove = get_comp_move()
     
-    print("Player move is {}".format(p1move))
-    print("Computer move is {}".format(cmove))
-    
-    winner = get_round_winner(p1move, cmove)
-    if winner == "player":
-        return("Player won!")
-    elif winner == "computer":
-        return("Computer")
-    else:
-        return("tie")
-print(rps())
+        print("Player move is {}".format(p1move))
+        print("Computer move is {}".format(cmove))
+        winner = get_round_winner(p1move, cmove)
+        if winner == "player":
+            print("Player won!")
+            player = player + 1
+        elif winner == "computer":
+            print("Computer won")
+            computer = computer + 1
+        else:
+            print("tie")
+            ties = ties + 1
+        print("Players score is {}".format(player))
+        print("Computer score is {}".format(computer))
+        print("Ties are {}".format(ties))
+        
+rps()
