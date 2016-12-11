@@ -61,7 +61,7 @@ def rps():
     computer = 0
     ties = 0
     round = get_rounds()
-    for x in range(1, round):
+    for x in range(round):
         p1move = get_p1_move()
         cmove = get_comp_move()
     
