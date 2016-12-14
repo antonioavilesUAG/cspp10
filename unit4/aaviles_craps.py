@@ -4,8 +4,8 @@ import random
 def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
-    dice_sum = dice1 + dice2
-    print("The roll is {} {}".format(dice1,dice2))
+    return("The roll is {}+{}".format(dice1,dice2))
+    
 #function name: bank 
 #agurment: none
 #purpose :how much money the player has.
@@ -18,19 +18,22 @@ def get_player_bank():
 #purpose to be able to place a bet with money the player has
 #return: the amount of money they bet
 def get_bet(bank):
-    bank = (int(input("Place your bet: ")))
-    if bank <= 100:
-        return bank:
-    elif bank != 100:
-        print(int(input("You don't have that amount place another bet: ")
-get_bet(bank)
+    bet = (int(input("Place your bet: ")))
+    if bet <= bank:
+        return bet
+    elif bet != bank:
+        print(int(input("You don't have that amount place another bet: ")))
+get_bet(100)
         
-#function name: get_first_roll
-#agurment: point_number
-#purpose: de
-#returns: 
-
-
+#function name: get_first_phase
+#argument: point_number
+#purpose: to set the wining numbers
+#returns: the wining number for phase one.
+def get_first_phase():
+    if dice_sum == 2 or dice_sum == 7:
+        return("Player wins")
+    elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
+        return("Computer wins")
 #OPTION 2
 # function name: roll_result
 #   purpose: get the result of the roll
