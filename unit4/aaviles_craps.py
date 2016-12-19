@@ -31,10 +31,15 @@ def get_bet(bank):
 #purpose: to set the wining numbers
 #returns: the wining number for phase one.
 def get_first_phase(dice_sum):
-    if dice_sum == 2 or dice_sum == 7:
-        return("Player wins")
+    if dice_sum == 7 or dice_sum == 11:
+        print("Player wins")
     elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
         print("Computer wins")
     else:
-        return("Reroll")
-get_first_phase(2)
+        return point_number
+get_first_phase()
+
+def get_point_number(point_number):
+    if dice_sum = point_number:
+        print ("player wins")
+    elif 
