@@ -8,13 +8,6 @@ def roll2dice():
     print("Roll was {} and {}. Equal to {}".format(dice1, dice2, dice_sum))
     return dice_sum
 
-#function name: bank 
-#agurment: none
-#purpose :how much money the player has.
-#return a amount. 
-def get_player_bank():
-    bank = 100
-    return bank
 #function name: get_bets 
 #agurment: bank 
 #purpose to be able to place a bet with money the player has
@@ -22,7 +15,7 @@ def get_player_bank():
 def get_bet(bank):
     bet = (int(input("Place your bet: ")))
     if bet <= bank:
-        return("Your bet was {}".format(bet))
+        print("Your bet was {}".format(bet))
     elif bet != bank:
         print(int(input("You don't have that amount place another bet: ")))
 
@@ -37,9 +30,21 @@ def get_first_phase(dice_sum):
         print("Computer wins")
     else:
         return point_number
-get_first_phase()
 
-def get_point_number(point_number):
-    if dice_sum = point_number:
+def get_point_number(dice_sum, point_number):
+    if dice_sum == point_number:
         print ("player wins")
-    elif 
+    elif dice_sum == 7:
+        print("computer wins")
+    else:
+        print("reroll")
+
+def craps():
+    bank = 100
+    roll = roll2dice()
+    bet = get_bet(bank)
+    while bank >= 0:
+        print(bet) 
+    
+
+craps()
