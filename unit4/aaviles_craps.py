@@ -44,7 +44,9 @@ def craps():
     roll = roll2dice()
     bet = get_bet(bank)
     while bank >= 0:
-        print(bet) 
+        bet = get_bet(bank)
+        phase_one = get_first_phase()   
+        
     
 
 craps()
