@@ -15,7 +15,7 @@ def roll2dice():
 def get_bet(bank):
     bet = (int(input("Place your bet: ")))
     if bet <= bank:
-        print("Your bet was {}".format(bet))
+        print (bet)
     elif bet != bank:
         print(int(input("You don't have that amount place another bet: ")))
 
@@ -25,19 +25,19 @@ def get_bet(bank):
 #returns: the wining number for phase one.
 def get_first_phase(dice_sum):
     if dice_sum == 7 or dice_sum == 11:
-        print("Player wins")
+        return("player wins")
     elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
-        print("Computer wins")
+        return("computer wins")
     else:
         return point_number
 
 def get_point_number(dice_sum, point_number):
     if dice_sum == point_number:
-        print ("player wins")
+        return ("player wins")
     elif dice_sum == 7:
-        print("computer wins")
+        return("computer wins")
     else:
-        print("reroll")
+        return("reroll")
 
 def craps():
     bank = 100
@@ -46,7 +46,12 @@ def craps():
     while bank >= 0:
         bet = get_bet(bank)
         phase_one = get_first_phase()   
-        
-    
+        if phase_one == "player wins":
+            print("you win")
+        elif phase_one == "computer wins":
+            print ("computer wins")
+        else:
+            get_point_number(dice_sum)
+            
 
 craps()
