@@ -42,7 +42,6 @@ def get_round_winner(p1move, cmove):
         return("player")
     else: 
         return("tie")
-
 def get_full_move(shortmove):
     if shortmove == "r":
         return ("rock")

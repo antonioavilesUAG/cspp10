@@ -29,29 +29,39 @@ def get_first_phase(dice_sum):
     elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
         return("computer wins")
     else:
-        return point_number
+        return dice_sum
 
-def get_point_number(dice_sum, point_number):
-    if dice_sum == point_number:
-        return ("player wins")
-    elif dice_sum == 7:
+def get_point_number(dice_sum):
+    dice3 = random.randint(1,6)
+    dice4 = random.randint(1,6)
+    point_number = dice3 + dice4
+    if point_number == dice_sum:
+        return("player wins")
+    elif point_number == 7:
         return("computer wins")
     else:
         return("reroll")
-
 def craps():
     bank = 100
-    roll = roll2dice()
-    bet = get_bet(bank)
     while bank >= 0:
+        roll = roll2dice()
         bet = get_bet(bank)
-        phase_one = get_first_phase()   
+        dice_sum = roll
+        phase_one = get_first_phase(dice_sum)
+        second_phase = get_point_number(dice_sum)
         if phase_one == "player wins":
-            print("you win")
+            print("player win")
         elif phase_one == "computer wins":
-            print ("computer wins")
-        else:
-            get_point_number(dice_sum)
-            
-
+            print("computer wins")
+        elif phase_one == "reroll":
+            print("going to point number phase")
+        elif second_phase == "player wins":
+            print("Player won")
+        elif second_phase == "computer wins":
+            print("Computer won")
+        elif bank  == 0:
+            break
 craps()
+
+
+
