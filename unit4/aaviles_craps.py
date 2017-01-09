@@ -59,8 +59,7 @@ def craps():
             print("Player won")
         elif second_phase == "computer wins":
             print("Computer won")
-        elif bank  == 0:
-            break
+
 craps()
 
 
