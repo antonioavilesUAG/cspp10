@@ -1,6 +1,6 @@
 import random 
 num = (random.randint(1,100)) 
-guess = int(input("number of guess: "))
+guess = int(input("Try to guess the right number: "))
 attempt = 0
 while num != guess:
     if num > guess:

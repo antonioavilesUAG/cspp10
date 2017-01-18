@@ -35,6 +35,7 @@ def get_point_number(dice_sum):
     dice3 = random.randint(1,6)
     dice4 = random.randint(1,6)
     point_number = dice3 + dice4
+    print("Roll was {} and {}.".format(dice3,dice4))
     if point_number == dice_sum:
         return("player wins")
     elif point_number == 7:
@@ -51,15 +52,22 @@ def craps():
         second_phase = get_point_number(dice_sum)
         if phase_one == "player wins":
             print("player win")
+            bank = bank + bet
+            print("Your bank is {}".format(bank))
         elif phase_one == "computer wins":
             print("computer wins")
+            bank = bank - bet
+            print("Your bank is {}".format(bank))
         elif phase_one == "reroll":
             print("going to point number phase")
         elif second_phase == "player wins":
             print("Player won")
+            bank = bank + bet
+            print("Your bank is {}".format(bank))
         elif second_phase == "computer wins":
             print("Computer won")
-
+            bank = bank - bet
+            print("Your bank is {}".format(bank))
 craps()
 
 
