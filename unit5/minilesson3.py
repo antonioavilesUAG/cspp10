@@ -1,8 +1,9 @@
-original = [1,2,3] 
-extension = [5,6,7]
-x = original
-y = extension
-def extend(x,y):
-    x.append(y) 
-    print(x)
+def extend(original,extension):
+    for element in extension:
+        original.append(element)
+    print(original)
     
+original = []
+extension = [1,2,3]
+
+extend(original, extension)

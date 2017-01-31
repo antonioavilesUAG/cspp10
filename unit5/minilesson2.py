@@ -11,7 +11,7 @@ while number_choice != "exited":
     elif number_choice == "print":
         print(num_list)
     else:
-        int(number_choice)
-        num_list.insert(0,number_choice)
-        
-        
+        for item in list_of_numbers:
+            if item in user_choice:
+                    list1.append(int(user_choice))
+                    break
