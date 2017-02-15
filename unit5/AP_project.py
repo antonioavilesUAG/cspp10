@@ -17,13 +17,8 @@ def get_bet(bank):
     elif bet != bank:
         return(int(input("You dont have that. Place new bet: ")))
 def get_guess(): 
-    player1 = (int(input("What cap is the bottle in out of the 3: ")))
-    if player1 == 1:
-        return 1
-    elif player1 == 2:
-        return 2 
-    elif player1 == 3:
-        return 3 
+    player1 = (int(input("What cap is the bottle in out of the 3 caps: ")))
+    return player1
 def get_comp_move():
     dealer = random.randint(1,4)
     if dealer == 1:
